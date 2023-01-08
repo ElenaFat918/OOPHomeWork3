@@ -31,7 +31,7 @@ public class Reserch {
         }
         return result;
     }
-
+     
     /**
      * Метод возвращает список всех людей, старше введенного возраста
      * @return
@@ -50,4 +50,14 @@ public class Reserch {
         }
         return searchAge;
     }
+    
 }
+
+// /**
+//      * Чтобы включить такой метод, нужно наследование от Comparable<Animal>
+//      * переопределяем compareTo. бегаем по коллекции и сравниваем предидущ с последующ
+//      */
+//     @Override
+//     public int compareTo(Person p, Relationship re) {
+//         return this.t.p1.fullName().compareTo(p.fullName) && t.re.compareTo(re);
+//     }

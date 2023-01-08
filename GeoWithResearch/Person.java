@@ -1,4 +1,4 @@
-public class Person {
+public class Person implements Comparable<Person>{
 /**
     * выделяем сущность "Персона": говорим класс Person, для этой сущности определены  поля - fullName и возраст
 */
@@ -27,5 +27,10 @@ public class Person {
      */
     public int getAge() {
         return age;
+    }
+    
+    @Override
+    public int compareTo(Person o) {
+        return this.getAge()-o.getAge();
     }
 }
