@@ -1,8 +1,7 @@
 public class Cow extends Animal implements Movement, Eat, Sounds{
-    private String name;
-    
-    public Cow(String name) {
-        super(name);
+       
+    public Cow(String name, Integer weight) {
+        super(name, weight);
         }
     
     @Override

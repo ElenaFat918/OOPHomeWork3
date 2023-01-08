@@ -1,8 +1,7 @@
 public class Horse extends Animal implements Movement, Eat, Sounds{
-    private String name;
 
-    public Horse(String name) {
-        super(name);
+    public Horse(String name,Integer weight) {
+        super(name, weight);
     }
     
     @Override

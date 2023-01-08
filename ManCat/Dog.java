@@ -1,8 +1,7 @@
 public class Dog extends Animal implements Movement, Eat, Sounds{
-    private String name;
     
-    public Dog(String name) {
-        super(name);
+    public Dog(String name, Integer weight) {
+        super(name, weight);
     }
     
     @Override

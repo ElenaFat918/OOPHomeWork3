@@ -1,11 +1,25 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+
 public class Main {
     public static void main(String[] args) {
 
         Man man = new Man("Артём");
-        Cat cat = new Cat("Пушок");
-        Dog dog = new Dog("Шарик");
-        Horse horse = new Horse("Игла");
-        Cow cow = new Cow("Зорька");
+        Animal cat = new Cat("Пушок", 3);
+        Animal dog = new Dog("Шарик",10);
+        Animal horse = new Horse("Игла", 300);
+        Animal cow = new Cow("Зорька", 400);
+        
+
+        ArrayList<Animal> myList = new ArrayList<>();
+        myList.add(dog);
+        myList.add(cow);
+        myList.add(cat);
+        myList.add(horse);
+        System.out.println(myList);
+        Collections.sort(myList, new WeightComparator()); //по весу от меньшего к большему
+        System.out.println(myList);
         
         man.call(cat); cat.movement();
         man.call(cow);
@@ -15,21 +29,16 @@ public class Main {
         man.feed(cow); cow.eat();
         man.stroked(cow); cow.sounds();
        
+        Iterator<Animal> iterator = myList.iterator(); //перебор коллекций
+        while (iterator.hasNext()) {
+            Animal next = iterator.next();
+            if (next.getWeight()<5){
+                man.takeOnHand(next);
+                man.stroked(next);
+            }
+        }
     }
 }
 /*
- * Подумать как описать логику взаимодействия человека и домашнего питомца.
- * Сценарий: “Человек “зовёт” котика “кис-кис”, котик отзывается. 
- * Какое ещё взаимодействие может быть?
+ * Проделать код ревью своих работ. Продумать, какие компоненты можно и нужно переписать.
  */
-//**Проект работает только если открыть папку отдельно от других заданий/
-/*
- * Описываем логику:
- * Создаем 2х человек (экземпляр класса Man с именем и поведением(настроением) в отношении кошки 
- * в качестве аргументов конструктора) 
- * Создаем кошку (экземпляр класса Cat с именем в качестве аргумента конструктора) 
- * Используя метод call, отвечающий за реакцию кошки на голос человека, Человек1 зовет кошку
- *  и происходит реакция кошки на этот зов, она подходит
- *  Используя метод call, отвечающий за реакцию кошки на голос человека, Человек2 зовет кошку
- *  и происходит реакция кошки на этот зов, кошка убегает
-*/

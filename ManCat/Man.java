@@ -21,10 +21,14 @@ public class Man {
     }
     
     public void feed(Animal a){ 
-        System.out.println("Человек " + name + " покормил животное " + a.getClass() + " " + a.getName());
+        System.out.println("Человек " + name + " покормил животное " + a.getName());
     }
 
     public void stroked (Animal a){
-        System.out.println("Человек " + name + " погладил животное " + a.getClass() + " " + a.getName());
-    }    
+        System.out.println("Человек " + name + " погладил животное " + a.getName());
+    }   
+
+    public void takeOnHand (Animal a){
+        System.out.println("Человек " + name + " взял на ручки животное " + a.getName());
+    }   
 }

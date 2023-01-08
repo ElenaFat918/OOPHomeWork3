@@ -1,9 +1,7 @@
-public class Cat extends Animal implements Movement, Eat, Sounds{
-    
-    private String name;
-    
-    public Cat (String name) {
-        super(name);
+public class Cat extends Animal {
+
+    public Cat (String name, Integer weight) {
+        super(name, weight);      
     }
     
     @Override
@@ -21,10 +19,7 @@ public class Cat extends Animal implements Movement, Eat, Sounds{
         System.out.println("Кошка поела");
     }
 
-    @Override
-    public String toString() {
-        return "Кошка"+ name;
-    }
+    
     // /**
     //  * Метод вывода в консоль отклика кошки
     //  * @param name
